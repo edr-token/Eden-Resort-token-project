@@ -1,0 +1,120 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Eden Resort Token – Devnet Demo</title>  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="style.css" />  
+</head>  
+<body>  
+  <!-- Background -->  
+  <div class="bg"></div>  
+  <div class="overlay"></div>  
+  
+  <!-- Header -->  
+  <header class="header">  
+    <div class="brand">  
+      <img src="assets/logo.png" alt="EDR" class="logo">  
+      <div class="titles">  
+        <h1>Eden Resort Token</h1>  
+        <span class="badge">Devnet demo</span>  
+      </div>  
+    </div>  
+    <div class="actions">  
+      <button id="btnSeller" class="btn ghost">📁 Connect Seller JSON</button>  
+      <input id="sellerFile" type="file" accept=".json" hidden />  
+      <button id="btnWallet" class="btn primary">👛 Connect Wallet</button>  
+    </div>  
+  </header>  
+  
+  <!-- Hero -->  
+  <section class="hero">  
+    <h2>Membership Packs</h2>  
+    <p>Connect your wallet and mint your community status.</p>  
+    <div id="walletStatus" class="status">🔴 Wallet: disconnected</div>  
+  </section>  
+  
+  <!-- Carousel -->  
+  <section class="packs">  
+    <button class="nav left" id="prev"><img src="assets/arrow-left.svg" alt="prev"></button>  
+  
+    <div class="carousel" id="carousel">  
+      <!-- Silver -->  
+      <article class="card silver">  
+        <header>  
+          <h3>Silver</h3>  
+          <div class="price"><strong>0.25</strong> SOL</div>  
+        </header>  
+        <ul class="features">  
+          <li>1,000 EDR</li>  
+          <li>Access to Silver Events</li>  
+        </ul>  
+        <button class="btn silver" data-tier="0">Buy Silver</button>  
+      </article>  
+  
+      <!-- Gold -->  
+      <article class="card gold">  
+        <header>  
+          <h3>Gold</h3>  
+          <div class="price"><strong>0.5</strong> SOL</div>  
+        </header>  
+        <ul class="features">  
+          <li>5,000 EDR</li>  
+          <li>Access to Gold Events</li>  
+        </ul>  
+        <button class="btn gold" data-tier="1">Buy Gold</button>  
+      </article>  
+  
+      <!-- Platinum -->  
+      <article class="card platinum">  
+        <header>  
+          <h3>Platinum</h3>  
+          <div class="price"><strong>1.0</strong> SOL</div>  
+        </header>  
+        <ul class="features">  
+          <li>10,000 EDR</li>  
+          <li>VIP events, galas, strategy calls</li>  
+        </ul>  
+        <button class="btn platinum" data-tier="2">Buy Platinum</button>  
+      </article>  
+    </div>  
+  
+    <button class="nav right" id="next"><img src="assets/arrow-right.svg" alt="next"></button>  
+  </section>  
+  
+  <!-- Console -->  
+  <section class="console">  
+    <div class="console-head">  
+      <h4>On-chain Console</h4>  
+      <div class="balances">  
+        <span id="solBal">SOL: –</span>  
+        <span id="edrBal">EDR: –</span>  
+      </div>  
+      <button id="clear" class="btn ghost sm">🧹 Clear</button>  
+    </div>  
+    <div id="logs" class="logs"></div>  
+  </section>  
+  
+  <!-- Modals -->  
+  <div id="modal" class="modal hidden">  
+    <div class="modal-card">  
+      <h3 id="modalTitle">Confirm</h3>  
+      <p id="modalMsg">Message…</p>  
+      <div class="modal-actions">  
+        <button id="modalCancel" class="btn ghost">Cancel</button>  
+        <button id="modalOk" class="btn primary">Confirm</button>  
+      </div>  
+    </div>  
+  </div>  
+  
+  <div id="toast" class="toast hidden"></div>  
+  
+  <footer class="footer">  
+    <span>Devnet demo • @EDR_token</span>  
+  </footer>  
+  
+  <script type="module" src="script.js"></script>  
+</body>  
+</html>  
