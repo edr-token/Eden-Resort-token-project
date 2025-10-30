@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+# Config
+SELLER_KEYPAIR="./seller.json"
+MINT_ADDRESS=JQ9KrVjKC8FFVq17bxf2V98RLw8x3AahbUeotAKLxfd
+SELLER_ATA_ADDRESS=H4wHWGqtHB55jSX5sbU8P3hcNmFC774QdAmtxtT27LHr
+TOTAL_SUPPLY=1000000000  # 100,000,000 
+
+echo "Minting supply to seller wallet..."
+
+spl-token mint $MINT_ADDRESS $TOTAL_SUPPLY $SELLER_ATA_ADDRESS

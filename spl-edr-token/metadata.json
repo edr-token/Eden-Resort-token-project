@@ -1,0 +1,12 @@
+{
+    "name": "Eden Resort Token",
+    "symbol": "EDR",
+    "description": "EDR aims to create a vibrant community of resort enthusiasts who can fully immerse themselves in the luxury and excitement that Eden Resort has to offer.",
+    "image": "https://cdn.discordapp.com/attachments/1418182305868152874/1421068038257512458/83E115F9-9B79-4A18-B2FD-DA0FBF0C7F73.png?ex=68d7b03e&is=68d65ebe&hm=825e8a4545b744c19b2da5e63d8267509d97d82e0630cec2722c603620bd5cbe",
+    "attributes": [
+        {
+        "trait_type": "Item",
+        "value": "Developer Portal"
+        }
+    ]
+}
