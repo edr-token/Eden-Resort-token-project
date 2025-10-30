@@ -1,0 +1,49 @@
+use anchor_lang::prelude::*;
+use anchor_spl::associated_token::AssociatedToken;
+use anchor_spl::token::{Mint, Token, TokenAccount};
+
+declare_id!("H7bsCvtWx5TRF9MztdL9AKkZzhbwdDUQtotjUQPwVCbi");
+
+pub mod edr_packs {
+    use super::*;
+    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+        let cfg = &mut ctx.accounts.config;
+        cfg.admin = ctx.accounts.admin.key();
+        cfg.mint = ctx.accounts.mint.key();
+        cfg.bump = *ctx.bumps.get("config").unwrap();
+        Ok(())
+    }
+}
+pub struct Initialize<'info> {
+    #[account(mut)]
+    pub admin: Signer<'info>,
+
+    pub mint: Account<'info, Mint>,
+
+    #[account(
+        mut,
+        associated_token::mint = mint,
+        associated_token::authority = admin
+    )]
+    pub vault: Account<'info, TokenAccount>,
+
+ init,
+        payer = admin,
+        seeds = [b"config"],
+        bump,
+        space = 8 + Config::SIZE
+    )]
+    pub config: Account<'info, Config>,
+
+    pub system_program: Program<'info, System>,
+    pub token_program: Program<'info, Token>,
+    pub associated_token_program: Program<'info, AssociatedToken>,
+}
+pub struct Config {
+    pub admin: Pubkey,
+    pub mint: Pubkey,
+    pub bump: u8,
+}
+impl Config {
+    pub const SIZE: usize = 32 + 32 + 1;
+}
